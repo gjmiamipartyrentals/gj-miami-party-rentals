@@ -1,110 +1,91 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#12004d" />
-  <title>G & J Miami Party Rentals</title>
-  <meta name="description" content="G & J Miami Party Rentals — bounce houses, water slides, tables and chairs in Miami and surrounding areas." />
-  <style>
-    *{box-sizing:border-box}
-    html,body{margin:0;min-height:100%;background:#090024;font-family:Arial,Helvetica,sans-serif}
-    body{display:flex;justify-content:center}
-    .site{position:relative;width:min(100vw,1024px);line-height:0;box-shadow:0 0 42px rgba(0,0,0,.45)}
-    .site img{display:block;width:100%;height:auto;user-select:none;-webkit-user-drag:none}
-    .hotspot{position:absolute;display:block;z-index:4;border-radius:14px;outline:none}
-    .hotspot:focus-visible{outline:4px solid #fff;box-shadow:0 0 0 7px #ff168b}
-    /* top navigation */
-    .home{left:34%;top:4.9%;width:7%;height:2.5%}
-    .rentals{left:40%;top:4.9%;width:9%;height:2.5%}
-    .packages{left:49%;top:4.9%;width:10%;height:2.5%}
-    .gallery{left:59%;top:4.9%;width:8%;height:2.5%}
-    .reviews{left:41%;top:7.0%;width:8%;height:2.3%}
-    .about{left:51%;top:7.0%;width:9%;height:2.3%}
-    .contact{left:61%;top:7.0%;width:9%;height:2.3%}
-    .quote-top{left:82%;top:4.0%;width:16%;height:4.0%}
-    .instagram{left:72.5%;top:4.1%;width:4.3%;height:3.6%}
-    .tiktok{left:77.5%;top:4.1%;width:4.3%;height:3.6%}
-    /* hero buttons */
-    .view-rentals{left:27%;top:43.0%;width:22%;height:4.1%}
-    .quote-hero{left:52%;top:43.0%;width:22%;height:4.1%}
-    /* rental cards */
-    .bounce-card{left:5%;top:65.5%;width:28%;height:17.0%}
-    .slide-card{left:35%;top:65.5%;width:28%;height:17.0%}
-    .table-card{left:65%;top:65.5%;width:28%;height:17.0%}
-    .quote-bottom{left:69%;top:86.0%;width:28%;height:4.0%}
-    .quote-footer{left:74%;top:92.2%;width:18%;height:3.6%}
-
-    .modal{position:fixed;inset:0;z-index:20;background:rgba(9,0,36,.82);display:none;align-items:center;justify-content:center;padding:18px}
-    .modal.open{display:flex}
-    .panel{width:min(94vw,560px);background:linear-gradient(145deg,#35107a,#b70a79 58%,#ff6a00);border:3px solid rgba(255,255,255,.7);border-radius:26px;padding:25px;color:#fff;box-shadow:0 22px 60px rgba(0,0,0,.5);line-height:1.35}
-    .panel h2{margin:0 0 8px;font-size:30px}
-    .panel p{margin:0 0 18px;opacity:.95}
-    .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-    .grid .full{grid-column:1/-1}
-    label{font-size:13px;font-weight:700;display:block;margin-bottom:5px}
-    input,select,textarea{width:100%;border:0;border-radius:12px;padding:12px 13px;font-size:16px;background:#fff;color:#111}
-    textarea{min-height:100px;resize:vertical}
-    .actions{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
-    button{border:0;border-radius:12px;padding:13px 18px;font-size:16px;font-weight:800;cursor:pointer}
-    .send{background:#ffd21a;color:#20103a;flex:1}
-    .close{background:#fff;color:#5b106f}
-    @media(max-width:560px){.grid{grid-template-columns:1fr}.grid .full{grid-column:auto}.panel{padding:19px}.panel h2{font-size:24px}}
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>G & J Miami Party Rentals</title>
+<meta name="description" content="G & J Miami Party Rentals — bounce houses, water slides, tables and chairs in Miami and surrounding areas.">
+<style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#10002f;font-family:Arial,Helvetica,sans-serif;color:#fff}
+.hero{position:relative;max-width:1536px;margin:auto}.hero img{display:block;width:100%;height:auto}
+.quote-btn{position:absolute;right:5%;top:4.5%;width:19%;height:4.5%;border:0;background:transparent;cursor:pointer}
+.section{max-width:1100px;margin:0 auto;padding:46px 20px;text-align:center}
+.section h2{font-size:clamp(28px,5vw,48px);margin:0 0 18px}
+.specials{background:linear-gradient(135deg,#ff168b,#7b20ff,#00a8ff)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:#fff;color:#2d145c;border-radius:22px;padding:24px;box-shadow:0 12px 30px #0004}
+.card strong{font-size:24px}.card p{font-size:17px;line-height:1.5}
+.prices{background:#160048}.price{font-size:34px;font-weight:900;color:#ffdc19}
+.cta{display:inline-block;margin-top:20px;padding:15px 26px;border-radius:999px;background:#ff168b;color:#fff;text-decoration:none;font-weight:900}
+.modal{position:fixed;inset:0;background:#090024dd;display:none;align-items:center;justify-content:center;padding:18px;z-index:20}.modal.open{display:flex}
+.panel{width:min(94vw,620px);max-height:94vh;overflow:auto;background:linear-gradient(145deg,#35107a,#b70a79 58%,#ff6a00);border:3px solid #ffffffaa;border-radius:26px;padding:24px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.full{grid-column:1/-1}label{display:block;font-weight:700;margin:5px 0}
+input,select,textarea{width:100%;border:0;border-radius:12px;padding:12px;font-size:16px}textarea{min-height:90px}
+.actions{display:flex;gap:10px;margin-top:16px}.actions button{border:0;border-radius:12px;padding:13px 18px;font-size:16px;font-weight:800;cursor:pointer}.send{background:#ffd21a;flex:1}.close{background:#fff;color:#5b106f}
+footer{text-align:center;padding:28px;background:#090024;line-height:1.6}
+@media(max-width:700px){.cards,.grid{grid-template-columns:1fr}.full{grid-column:auto}.quote-btn{right:3%;top:4%;width:25%;height:5%}}
+</style>
 </head>
 <body>
-  <main class="site" id="top">
-    <img src="homepage-design.png" alt="G & J Miami Party Rentals colorful Miami sunset website featuring bounce houses, a water slide, tables and chairs, confetti, and booking information." />
+<section class="hero">
+<img src="homepage-design.png" alt="G & J Miami Party Rentals colorful Miami homepage with bounce houses and blue green double-lane water slide">
+<button class="quote-btn openQuote" aria-label="Request a quote"></button>
+</section>
 
-    <a class="hotspot home" href="#top" aria-label="Home"></a>
-    <a class="hotspot rentals" href="#rentals" aria-label="Rentals"></a>
-    <a class="hotspot packages" href="#rentals" aria-label="Packages"></a>
-    <a class="hotspot gallery" href="#rentals" aria-label="Gallery"></a>
-    <a class="hotspot reviews" href="#rentals" aria-label="Reviews"></a>
-    <a class="hotspot about" href="mailto:gjmiamipartyrentals@yahoo.com?subject=About%20G%20%26%20J%20Miami%20Party%20Rentals" aria-label="About us"></a>
-    <a class="hotspot contact" href="mailto:gjmiamipartyrentals@yahoo.com" aria-label="Contact us"></a>
-    <a class="hotspot instagram" href="#" aria-label="Instagram"></a>
-    <a class="hotspot tiktok" href="#" aria-label="TikTok"></a>
-    <a class="hotspot quote-top js-quote" href="#quote" aria-label="Get a quote"></a>
-    <a class="hotspot view-rentals" href="#rentals" aria-label="View rentals"></a>
-    <a class="hotspot quote-hero js-quote" href="#quote" aria-label="Get a quote"></a>
-    <span id="rentals" style="position:absolute;top:64%;left:0"></span>
-    <a class="hotspot bounce-card js-quote" href="#quote" aria-label="View bounce house options"></a>
-    <a class="hotspot slide-card js-quote" href="#quote" aria-label="View water slide options"></a>
-    <a class="hotspot table-card js-quote" href="#quote" aria-label="View tables and chairs options"></a>
-    <a class="hotspot quote-bottom js-quote" href="#quote" aria-label="Get a quote today"></a>
-    <a class="hotspot quote-footer js-quote" href="#quote" aria-label="Get a quote"></a>
-  </main>
+<section class="section specials">
+<h2>🍂 Fall 2026 Grand Opening Specials</h2>
+<div class="cards">
+<div class="card"><strong>15% OFF</strong><p>Inflatable rentals during our Fall Grand Opening promotion.</p></div>
+<div class="card"><strong>$25 OFF</strong><p>Our blue & green double-lane water slide.</p></div>
+<div class="card"><strong>$50 OFF</strong><p>Party packages that include an inflatable plus tables & chairs.</p></div>
+</div>
+<p><small>Limited-time offers. Restrictions may apply.</small></p>
+</section>
 
-  <div class="modal" id="quote" role="dialog" aria-modal="true" aria-labelledby="quote-title">
-    <form class="panel" id="quoteForm">
-      <h2 id="quote-title">Request a Quote 🎉</h2>
-      <p>Tell us a little about your event. Submitting opens your email app with the details ready to send to G & J Miami Party Rentals.</p>
-      <div class="grid">
-        <div><label for="name">Name</label><input id="name" required></div>
-        <div><label for="phone">Phone</label><input id="phone" inputmode="tel"></div>
-        <div><label for="email">Email</label><input id="email" type="email"></div>
-        <div><label for="date">Event date</label><input id="date" type="date"></div>
-        <div class="full"><label for="rental">Rental needed</label><select id="rental"><option>Bounce House</option><option>Water Slide</option><option>Tables & Chairs</option><option>Multiple Rentals</option></select></div>
-        <div class="full"><label for="notes">Event details</label><textarea id="notes" placeholder="Location, guest count, questions, etc."></textarea></div>
-      </div>
-      <div class="actions"><button class="close" type="button" id="closeModal">Close</button><button class="send" type="submit">Send Quote Request</button></div>
-    </form>
-  </div>
+<section class="section prices">
+<h2>Starting Rental Prices</h2>
+<div class="cards">
+<div class="card"><strong>Bounce Houses</strong><p class="price">From $175</p><p>Clean, colorful fun for birthdays and celebrations.</p></div>
+<div class="card"><strong>Double-Lane Water Slide</strong><p class="price">From $325</p><p>Big Miami fun with our blue, green & gray slide.</p></div>
+<div class="card"><strong>Party Packages</strong><p class="price">Request a Quote</p><p>Bundle inflatables with tables & chairs for your event.</p></div>
+</div>
+<a href="#quote" class="cta openQuote">REQUEST A QUOTE</a>
+</section>
 
-  <script>
-    const modal=document.getElementById('quote');
-    document.querySelectorAll('.js-quote').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();modal.classList.add('open');}));
-    document.getElementById('closeModal').onclick=()=>modal.classList.remove('open');
-    modal.addEventListener('click',e=>{if(e.target===modal)modal.classList.remove('open')});
-    document.addEventListener('keydown',e=>{if(e.key==='Escape')modal.classList.remove('open')});
-    document.getElementById('quoteForm').addEventListener('submit',e=>{
-      e.preventDefault();
-      const g=id=>document.getElementById(id).value.trim();
-      const subject='Quote Request - G & J Miami Party Rentals';
-      const body=`Name: ${g('name')}\nPhone: ${g('phone')}\nEmail: ${g('email')}\nEvent date: ${g('date')}\nRental: ${g('rental')}\n\nEvent details:\n${g('notes')}`;
-      location.href=`mailto:gjmiamipartyrentals@yahoo.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    });
-  </script>
-</body>
-</html>
+<section class="section">
+<h2>Serving Miami & Surrounding Areas 🌴</h2>
+<p>Birthdays • Family Gatherings • School Events • Church Festivals • Community Events • Celebrations</p>
+<a href="#quote" class="cta openQuote">BOOK YOUR EVENT</a>
+</section>
+
+<footer><strong>G & J Miami Party Rentals</strong><br>Clean equipment • Dependable service • On-time delivery<br>gjmiamipartyrentals@yahoo.com</footer>
+
+<div class="modal" id="quote" role="dialog" aria-modal="true" aria-labelledby="quoteTitle">
+<form class="panel" id="quoteForm">
+<h2 id="quoteTitle">Request a Quote 🎉</h2>
+<p>Tell us about your event and we’ll prepare your rental request.</p>
+<div class="grid">
+<div><label>Name</label><input name="name" required></div>
+<div><label>Phone</label><input name="phone" type="tel" required></div>
+<div><label>Email</label><input name="email" type="email" required></div>
+<div><label>Event Date</label><input name="date" type="date" required></div>
+<div><label>ZIP / Event Area</label><input name="location" required></div>
+<div><label>Rental</label><select name="rental"><option>Bounce House</option><option>Double-Lane Water Slide</option><option>Tables & Chairs</option><option>Party Package</option><option>Other / Not Sure</option></select></div>
+<div><label>Estimated Guests</label><input name="guests" type="number" min="1"></div>
+<div class="full"><label>Event Details</label><textarea name="details" placeholder="Tell us what you need..."></textarea></div>
+</div>
+<div class="actions"><button type="button" class="close">Close</button><button type="submit" class="send">Prepare Email Request</button></div>
+</form>
+</div>
+<script>
+const modal=document.getElementById('quote');
+document.querySelectorAll('.openQuote').forEach(x=>x.addEventListener('click',e=>{e.preventDefault();modal.classList.add('open')}));
+document.querySelector('.close').onclick=()=>modal.classList.remove('open');
+modal.addEventListener('click',e=>{if(e.target===modal)modal.classList.remove('open')});
+document.getElementById('quoteForm').addEventListener('submit',e=>{
+ e.preventDefault(); const f=new FormData(e.target);
+ const body=`Name: ${f.get('name')}\nPhone: ${f.get('phone')}\nEmail: ${f.get('email')}\nEvent Date: ${f.get('date')}\nEvent Area/ZIP: ${f.get('location')}\nRental: ${f.get('rental')}\nGuests: ${f.get('guests')}\n\nEvent Details:\n${f.get('details')}`;
+ location.href='mailto:gjmiamipartyrentals@yahoo.com?subject='+encodeURIComponent('G & J Miami Party Rentals - Quote Request')+'&body='+encodeURIComponent(body);
+});
+</script>
+</body></html>
